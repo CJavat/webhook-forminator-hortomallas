@@ -26,14 +26,17 @@ export class EmailService {
       setTimeout( async () => { //? Para enviar el correo 2 días después.
         
         const sentEmail = await this.transporter.sendMail({
-          from: 'multimedia@hortomallas.com',
+          from: {
+            name: envs.MAILER_NAME_EMAIL,
+            address: envs.MAILER_EMAIL,
+          },
           to,
           subject,
           html: htmlBody,
         })
         
         console.log( sentEmail );
-      }, 60000 );
+      }, 1 );
       //TODO: }, daysToMilliseconds( 2 ) );
       return true;
       

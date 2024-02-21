@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import { envs } from "./config";
 import { PruebaForminatorController } from "./presentation/prueba-forminator/controller";
 import path from "path";
@@ -17,9 +17,10 @@ function main() {
 
   //* ROUTES
   app.post("/api/prueba", controller.webhookHandler);
-  // app.post("/api/prueba", (req, res) => {
-  //   console.log(req.headers);
-  // }) ;
+  app.use("*", ( req: Request, res: Response ) => {
+    res.status(403).json({ msg: "ACCESS DENIED" });
+  });
+
 
   //* STATIC FILES (borrar después)
   app.use( express.static( path.join( __dirname, '../public') ) );

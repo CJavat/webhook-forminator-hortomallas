@@ -14,12 +14,10 @@ export class ForminatorPruebaService {
       htmlBody: this.htmlTemplate({ name_1, email_1, phone_1, textarea_1, form_title, entry_time }),
     }
 
-
     return emailOptions;
   }
   
-
-    //* Método
+    //* Métodos
     private htmlTemplate( payload: PruebaResDataPayload ): string {
     const html: string = `
       <!DOCTYPE html>

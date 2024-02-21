@@ -13,6 +13,13 @@
 
 4. La IP pública que te da __NGROK__ se pone en donde requieren el link para el __WebHook__.
 
+## Hacer Pruebas En Postman (DEV)
+1. Poner el endpoint configurado.
+2. Enviar los datos configurados en el formulario, en formato ```raw > json```.
+3. En el ```HEADERS``` enviar ```User-Agent: WordPress/6.4.3; https://www.hortomallas.com ForminatorWebhook/1.0```.
+4. Debe configurarse dependiendo de como entregué el header el forminator en tu página.
+
+
 ## Configuración de NodeMailer
 1. Configurar variables de entorno de email
 ```
@@ -21,6 +28,7 @@
   MAILER_SERVICE=example
   MAILER_EMAIL=email@example.com
   MAILER_PASSWORD=123456
+  MAILER_NAME_EMAIL=NombreDelHost
 ```
 
 ### En caso de usar Gmail como el proveedor de servicios:
@@ -56,3 +64,5 @@
   }, daysToMilliseconds( 2 ) ); // En 2 días se enviará el correo.
 ```
 8. Si necesitas que se reenvie el correo de inmediato, eliminar el setTimeout.
+
+
