@@ -125,7 +125,7 @@ export class ForminatorService {
       
             <img 
               class="btn__comprar-aqui" 
-              src="https://www.hortomallas.com/wp-content/uploads/2024/02/comprar-aqui-btn.gif" 
+              src="https://www.hortomallas.com/wp-content/uploads/2024/02/Pagina-3-1.gif" 
               alt="botón de comprar aquí" 
             />
       
@@ -137,7 +137,7 @@ export class ForminatorService {
           </div>
       
           <div class="imagen">
-            <img src="https://www.hortomallas.com/wp-content/uploads/2024/02/celular.gif" alt="Teléfono mostrando la página de HORTOMALLAS" />
+            <img src="https://www.hortomallas.com/wp-content/uploads/2024/02/Comprar-aqui-3.gif" alt="Teléfono mostrando la página de HORTOMALLAS" />
           </div>
       
         </div>

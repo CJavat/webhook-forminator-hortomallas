@@ -18,10 +18,12 @@ function main() {
   //* ROUTES
   app.post("/api/prueba", controller.webhookHandler);
   app.post('/api/enviar-comentarios-es', controller.webhookHandler);
-  app.post('/api/enviar-comentarios-en', controller.webhookHandler);
   app.post('/api/formulario-en-contacto-es', controller.webhookHandler);
-  app.post('/api/formulario-en-contacto-en', controller.webhookHandler);
   app.post('/api/descargar-manuales-catalogos-es', controller.webhookHandler);
+  
+  //TODO: Crear un htmlTemplate para los de inglés.
+  app.post('/api/enviar-comentarios-en', controller.webhookHandler);
+  app.post('/api/formulario-en-contacto-en', controller.webhookHandler);
   app.post('/api/descargar-manuales-catalogos-en', controller.webhookHandler);
 
   //* Error en rutas desconocidas.
