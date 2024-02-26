@@ -11,11 +11,11 @@ export class EmailService {
     port: +envs.MAILER_PORT,
     secure: true, // true for 465, false for other ports
     auth: {
-        user: envs.MAILER_EMAIL,
-        pass: envs.MAILER_PASSWORD
+      user: envs.MAILER_EMAIL,
+      pass: envs.MAILER_PASSWORD
     }
   });
-
+  
   constructor() {}
 
   async sendEmail( options: SendEmailOptions ): Promise<boolean> {
@@ -36,16 +36,33 @@ export class EmailService {
         })
         
         console.log( sentEmail );
-      }, 1 );
-      //TODO: AGREGARLO CUANDO EL PROYECTO ESTÉ LISTO }, daysToMilliseconds( 2 ) );
-      return true;
+      }, daysToMilliseconds( 2 ) );
       
+      this.mailSentSuccessfully();
+      
+      return true;
     } catch (error) {
       console.log( error );
       return false;
     }
-
   }
-  
-  //TODO: CREAR OTRO PARA QUE ME ENVIEN LOS CORREOS QUE SE ENVIARON
+
+  private async mailSentSuccessfully() {
+    try {
+      await this.transporter.sendMail({
+        from: {
+          name: envs.MAILER_NAME_EMAIL,
+          address: envs.MAILER_EMAIL,
+        },
+        to: 'multimedia@hortomallas.com',
+        subject: 'Reenvio de Correo',
+        html: `<h1>El Correo se reenvió correctamente</h1>`,
+      })
+
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
 }
+
