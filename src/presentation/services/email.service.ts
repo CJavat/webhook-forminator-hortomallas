@@ -3,7 +3,7 @@ import { envs } from "../../config";
 
 import { daysToMilliseconds } from "../../helper/daysToMilliseconds";
 
-import { SendEmailOptions } from "../../interfaces/prueba-sendEmailOptions.interface";
+import { SendEmailOptions } from "../../interfaces/sendEmailOptions.interface";
 
 export class EmailService {
   private transporter = nodemailer.createTransport({
@@ -21,7 +21,7 @@ export class EmailService {
   async sendEmail( options: SendEmailOptions ): Promise<boolean> {
 
     const { to, subject, htmlBody } = options;
-
+    
     try {
       setTimeout( async () => { //? Para enviar el correo 2 días después.
         
@@ -37,7 +37,7 @@ export class EmailService {
         
         console.log( sentEmail );
       }, 1 );
-      //TODO: }, daysToMilliseconds( 2 ) );
+      //TODO: AGREGARLO CUANDO EL PROYECTO ESTÉ LISTO }, daysToMilliseconds( 2 ) );
       return true;
       
     } catch (error) {
@@ -47,4 +47,5 @@ export class EmailService {
 
   }
   
+  //TODO: CREAR OTRO PARA QUE ME ENVIEN LOS CORREOS QUE SE ENVIARON
 }
