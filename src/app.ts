@@ -21,8 +21,8 @@ function main() {
   app.post('/api/enviar-comentarios-en', controller.webhookHandler);
   app.post('/api/formulario-en-contacto-es', controller.webhookHandler);
   app.post('/api/formulario-en-contacto-en', controller.webhookHandler);
-  app.post('/api/descargar-manuales-catálogos-es', controller.webhookHandler);
-  app.post('/api/descargar-manuales-catálogos-en', controller.webhookHandler);
+  app.post('/api/descargar-manuales-catalogos-es', controller.webhookHandler);
+  app.post('/api/descargar-manuales-catalogos-en', controller.webhookHandler);
 
   //* Error en rutas desconocidas.
   app.use("*", ( req: Request, res: Response ) => {
