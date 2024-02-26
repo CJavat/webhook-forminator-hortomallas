@@ -1,24 +1,24 @@
-import { PruebaResDataPayload } from "../../interfaces/prueba-resdata.interface";
-import { SendEmailOptions } from "../../interfaces/prueba-sendEmailOptions.interface";
+import { ResDataPayload } from "../../interfaces/resdata.interface";
+import { SendEmailOptions } from "../../interfaces/sendEmailOptions.interface";
 
-export class ForminatorPruebaService {
+export class ForminatorService {
   constructor() {}
 
   //* Eventos
-  onResData( payload: PruebaResDataPayload ): SendEmailOptions {
-    const { name_1, email_1, phone_1, textarea_1, form_title, entry_time } = payload;
+  onResData( payload: ResDataPayload ): SendEmailOptions {
+    const { name_1, email_1 } = payload;
 
     const emailOptions = {
       to: email_1,
-      subject: "Formulario de contacto - Prueba",
-      htmlBody: this.htmlTemplate({ name_1, email_1, phone_1, textarea_1, form_title, entry_time }),
+      subject: `¡Aprovecha ésta promoción!`,
+      htmlBody: this.htmlTemplate( name_1 ),
     }
 
     return emailOptions;
   }
-  
-    //* Métodos
-    private htmlTemplate( payload: PruebaResDataPayload ): string {
+
+  //* Métodos
+  private htmlTemplate( name: string ): string {
     const html: string = `
       <!DOCTYPE html>
       <html lang="en">
@@ -105,7 +105,7 @@ export class ForminatorPruebaService {
         <div class="container">
       
           <div class="detalles">
-            <h2 class="detalles__subtitulo">Apreciable ${ payload.name_1 }</h2>
+            <h2 class="detalles__subtitulo">Apreciable ${ name }</h2>
             <p>En agradecimiento por tu interés, te ofrecemos un <span class="detalles__descuento"><br />DESCUENTO DEL 10%</span></p>
       
             <p>Cupón válido dentro de las primeras 48 h en tu primera compra en línea</p>

@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import { envs } from "./config";
-import { PruebaForminatorController } from "./presentation/prueba-forminator/controller";
+import { PruebaForminatorController } from "./presentation/forminator/controller";
 import path from "path";
 
 (() => {
@@ -17,6 +17,14 @@ function main() {
 
   //* ROUTES
   app.post("/api/prueba", controller.webhookHandler);
+  app.post('/api/enviar-comentarios-es', controller.webhookHandler);
+  app.post('/api/enviar-comentarios-en', controller.webhookHandler);
+  app.post('/api/formulario-en-contacto-es', controller.webhookHandler);
+  app.post('/api/formulario-en-contacto-en', controller.webhookHandler);
+  app.post('/api/descargar-manuales-catálogos-es', controller.webhookHandler);
+  app.post('/api/descargar-manuales-catálogos-en', controller.webhookHandler);
+
+  //* Error en rutas desconocidas.
   app.use("*", ( req: Request, res: Response ) => {
     res.status(403).json({ msg: "ACCESS DENIED" });
   });
