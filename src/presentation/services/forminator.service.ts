@@ -7,11 +7,20 @@ export class ForminatorService {
   //* Eventos
   onResData( payload: ResDataPayload ): SendEmailOptions {
     const { name_1, email_1 } = payload;
+    let name: string = '';
+    
+    if( name_1.trim().startsWith('{') ) { // Comprobar si viene un objeto o un string
+      const nameParsed = Object.values( JSON.parse( name_1 ) );
+      name = `${ nameParsed[0] } ${nameParsed[1]}`;
+      console.log(name);
+    } else {
+      name = name_1
+    }
 
     const emailOptions = {
       to: email_1,
       subject: `¡Aprovecha ésta promoción!`,
-      htmlBody: this.htmlTemplate( name_1 ),
+      htmlBody: this.htmlTemplate( name ),
     }
 
     return emailOptions;
