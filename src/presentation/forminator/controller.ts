@@ -37,7 +37,8 @@ export class PruebaForminatorController {
           .then( () => res.status(200).json({ msg: "success" }) )
           .catch( error => res.status(500).json({ error: 'INTERNAL SERVER ERROR' + error }) );
       } catch (error) {
-        return res.status( 400 ).json({ ok: false, msg: 'Bad Request' })
+        console.log( error );
+        return res.status( 400 ).json({ ok: false, msg: 'Bad Request' });
       }
     } else {
       return res.status(200).json({ message });

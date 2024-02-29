@@ -31,9 +31,12 @@ function main() {
     res.status(403).json({ msg: "ACCESS DENIED" });
   });
 
+  setInterval( () => { //? Cada 2 segundos se ejecuta para evitar que se ausetne el servidor.
+    console.log('Servidor Activo');
+  }, 120000 );
 
-  //* STATIC FILES (borrar después)
-  app.use( express.static( path.join( __dirname, '../public') ) );
+  //* STATIC FILES
+  // app.use( express.static( path.join( __dirname, '../public') ) );
   
   app.listen( envs.PORT, () => {
     console.log(`LISTENING ON PORT: ${ envs.PORT }`);

@@ -23,7 +23,7 @@ export class EmailService {
     const { to, subject, htmlBody } = options;
     
     try {
-      setTimeout( async () => { //? Para enviar el correo 2 días después.
+       setTimeout( async () => { //? Para enviar el correo 2 días después.
         
         const sentEmail = await this.transporter.sendMail({
           from: {
@@ -35,10 +35,16 @@ export class EmailService {
           html: htmlBody,
         })
         
-        console.log( sentEmail );
-      }, daysToMilliseconds( 2 ) );
+        console.log({
+          status: 'ok',
+          message: 'Email se envió correctamente al usuario', 
+          sentEmail
+        });
+
+        await this.mailSentSuccessfully();
+      }, 180000 );
+      // }, daysToMilliseconds( 2 ) );
       
-      this.mailSentSuccessfully();
       
       return true;
     } catch (error) {
