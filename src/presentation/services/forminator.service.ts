@@ -8,11 +8,12 @@ export class ForminatorService {
   onResData( payload: ResDataPayload ): SendEmailOptions {
     const { name_1, email_1 } = payload;
     let name: string = '';
+
+    console.log("Datos del usuario recibidos.");
     
     if( name_1.trim().startsWith('{') ) { // Comprobar si viene un objeto o un string
       const nameParsed = Object.values( JSON.parse( name_1 ) );
       name = `${ nameParsed[0] } ${nameParsed[1]}`;
-      console.log(name);
     } else {
       name = name_1
     }
