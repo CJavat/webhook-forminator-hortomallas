@@ -15,6 +15,14 @@ function main() {
   //* MIDDLEWARES
   app.use( express.json() );
 
+  //* Borrar después de que todo salga bien
+  app.get('/', ( req: Request, res: Response ) => {
+    res.status( 200 ).json({
+      status: 'ok',
+      msg: 'Ruta configurada correctamente',
+    })
+  });
+
   //* ROUTES
   app.post("/api/prueba", controller.webhookHandler);
   app.post('/api/enviar-comentarios-es', controller.webhookHandler);
