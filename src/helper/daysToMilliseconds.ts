@@ -5,6 +5,6 @@ export const daysToMilliseconds = ( days: number ) => {
   const hours: number = 60;
   const seconds: number = 60;
   const milliseconds: number = 1000;
-
-  return daysToHours * hours * seconds * milliseconds;
+  
+  return ( ( daysToHours * hours ) * seconds) * milliseconds;
 }
