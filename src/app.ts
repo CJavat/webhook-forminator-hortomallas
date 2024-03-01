@@ -1,7 +1,6 @@
 import express, { Request, Response } from "express";
 import { envs } from "./config";
 import { PruebaForminatorController } from "./presentation/forminator/controller";
-import path from "path";
 
 (() => {
   main();
@@ -14,11 +13,6 @@ function main() {
 
   //* MIDDLEWARES
   app.use( express.json() );
-
-  //* Borrar después de que todo salga bien
-  app.get('/', ( req: Request, res: Response ) => {
-    res.send("Hola");
-  });
 
   //* ROUTES
   app.post("/api/prueba", controller.webhookHandler);
