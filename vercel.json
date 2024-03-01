@@ -2,8 +2,8 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "./src"
+      "destination": "./dist/app.js"
     }
   ],
-  "outputDirectory": "./"
+  "outputDirectory": "./dist"
 }
