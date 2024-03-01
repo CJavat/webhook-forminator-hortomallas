@@ -4,6 +4,5 @@
       "source": "/api/(.*)",
       "destination": "./dist/app.js"
     }
-  ],
-  "outputDirectory": "./dist"
+  ]
 }
