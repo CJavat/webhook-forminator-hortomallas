@@ -6,5 +6,5 @@
       "destination": "/src/app.ts"
     }
   ],
-  "outputDirectory": "src"
+  "outputDirectory": "src/app.ts"
 }
