@@ -16,11 +16,8 @@ function main() {
   app.use( express.json() );
 
   //* Borrar después de que todo salga bien
-  app.get('/prueba', ( req: Request, res: Response ) => {
-    res.status( 200 ).json({
-      status: 'ok',
-      msg: 'Ruta configurada correctamente',
-    })
+  app.get('/', ( req: Request, res: Response ) => {
+    res.send('<h1>HOLA MUNDO</h1>')
   });
 
   //* ROUTES
