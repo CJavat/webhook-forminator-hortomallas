@@ -2,10 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "./src/app.ts",
+      "src": "*.ts",
       "use": "@vercel/node"
     }
-  ], 
+  ],
   "rewrites": [
     { 
       "source": "/(.*)", 
