@@ -17,10 +17,7 @@ function main() {
 
   //* Borrar después de que todo salga bien
   app.get('/', ( req: Request, res: Response ) => {
-    res.status( 200 ).json({
-      status: 'ok',
-      msg: 'Success!'
-    });
+    res.send("Hola");
   });
 
   //* ROUTES
