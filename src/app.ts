@@ -7,7 +7,7 @@ import path from "path";
   main();
 })();
 
-export default function main() {
+function main() {
   
   const app = express();
   const controller = new PruebaForminatorController();
