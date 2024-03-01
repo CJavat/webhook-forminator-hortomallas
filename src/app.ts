@@ -17,7 +17,10 @@ function main() {
 
   //* Borrar después de que todo salga bien
   app.get('/', ( req: Request, res: Response ) => {
-    res.send('<h1>HOLA MUNDO</h1>')
+    res.status( 200 ).json({
+      status: 'ok',
+      msg: 'Success!'
+    });
   });
 
   //* ROUTES
