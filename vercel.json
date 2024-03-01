@@ -1,9 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/src/(.*)",
-      "destination": "/src"
+      "source": "/api/(.*)",
+      "destination": "/src/app.ts"
     }
-  ],
-  "outputDirectory": "./dist/(.*)"
+  ]
 }
