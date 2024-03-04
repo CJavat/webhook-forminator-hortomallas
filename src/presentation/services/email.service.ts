@@ -42,8 +42,7 @@ export class EmailService {
         });
 
         await this.mailSentSuccessfully();
-      }, 180000 );
-      // }, daysToMilliseconds( 2 ) );
+      }, daysToMilliseconds( 2 ) );
       
       
       return true;
