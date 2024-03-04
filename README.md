@@ -66,3 +66,25 @@
 8. Si necesitas que se reenvie el correo de inmediato, eliminar el setTimeout.
 
 
+## DOCKERFILE
+1. Construir la imagen con `docker build --tag <nombre_imaen> . `
+2. Correr el `DockerFile` mediante la terminal:
+```
+docker container run `
+-e PORT=agregar_puerto `
+-e MAILER_HOST=agregar_host_mail `
+-e MAILER_PORT=puerto_del_mail `
+-e MAILER_SERVICE=servicio_del_mail `
+-e MAILER_EMAIL=tu_email `
+-e MAILER_PASSWORD=tu_password `
+-e MAILER_NAME_EMAIL=nombre_en_el_correo `
+-dp puertos:puertos `
+--name nombre_contenedor `
+webhook-forminator-hortomallas
+```
+3. Correr el `DockerFile` mediante el archivo `docker-compose.yaml`
+```
+docker compose up -d
+```
+__NOTA:__  
+  Agregar los valores a las variables de entorno primero antes de ejecutar el `docker-compose.yaml`

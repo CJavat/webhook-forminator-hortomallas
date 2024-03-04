@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  webhook:
+    image: webhook-forminator-hortomallas
+    container_name: webhook-forminator-container
+  
+    ports:
+      - ${PORT}:${PORT}
+
+    env_file: .env
+
+    environment:
+      - MAILER_HOST:${MAILER_HOST}
+      - MAILER_PORT:${MAILER_PORT}
+      - MAILER_SERVICE:${MAILER_SERVICE}
+      - MAILER_EMAIL:${MAILER_EMAIL}
+      - MAILER_PASSWORD:${MAILER_PASSWORD}
+      - MAILER_NAME_EMAIL:${MAILER_NAME_EMAIL}
+      - PORT:${PORT}
+
+    restart: always
